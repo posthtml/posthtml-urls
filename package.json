@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "posthtml-urls",
+  "description": "PostHTML plugin for transforming URLs.",
+  "version": "2.0.0-alpha",
+  "license": "MIT",
+  "author": "Steven Vachon <contact@svachon.com> (https://svachon.com)",
+  "repository": "github:posthtml/posthtml-urls",
+  "main": "lib",
+  "dependencies": {
+    "evaluate-value": "^2.0.0",
+    "http-equiv-refresh": "^2.0.1",
+    "list-to-array": "^1.1.0",
+    "object.entries": "^1.1.0",
+    "parse-srcset": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.6",
+    "html-tags": "^3.1.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "posthtml": "~0.11.6"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "scripts": {
+    "ci": "npm test && nyc report --reporter=text-lcov | coveralls",
+    "posttest": "nyc report --reporter=text-summary --reporter=html",
+    "prepublishOnly": "npm test",
+    "test": "nyc --silent mocha test.js --bail --check-leaks"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "posthtml",
+    "posthtml-plugin",
+    "url"
+  ]
+}
